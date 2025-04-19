@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafc;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.app-title {
+  color: #2a4365;
+  margin-bottom: 20px;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+.chat-window {
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.bubble {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+.bubble.user {
+  background-color: #d6e4ff;
+  align-self: flex-end;
+}
+
+.bubble.bot {
+  background-color: #f0f5ff;
+  border-left: 3px solid #3b82f6;
+}
+
+.alert {
+  background-color: #d1fae5;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 6px;
+  color: #065f46;
+  font-size: 14px;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+}
+
+.send-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: #2563eb;
+}
