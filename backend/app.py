@@ -9,8 +9,14 @@ CORS(app)
 def analyze():
     data = request.get_json()
     note = data.get('note', '')
-    response = extract_info(note)
-    return jsonify(response)
+    patient = data.get('patient', 'Non spécifié')
+    cycle = data.get('cycle', 'Non spécifié')
+
+    result = extract_info(note)
+    result['patient'] = patient
+    result['cycle'] = cycle
+
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
