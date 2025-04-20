@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import MessageBubble from './MessageBubble';
@@ -29,11 +28,28 @@ function ChatBox() {
       const res = await axios.post('http://localhost:5000/api/analyze', {
         note: message,
         patient: '',
-        cycle: ''
       });
-      setHistory(prev => [...prev, { type: 'bot', text: JSON.stringify(res.data, null, 2), parsed: res.data }]);
+
+      if (res.data.warning) {
+        alert(res.data.warning); // 👈 Alerte JS simple ici
+        setHistory(prev => [...prev, {
+          type: 'bot',
+          text: res.data.warning,
+          parsed: null
+        }]);
+      } else {
+        setHistory(prev => [...prev, {
+          type: 'bot',
+          text: JSON.stringify(res.data, null, 2),
+          parsed: res.data
+        }]);
+      }
     } catch (error) {
-      setHistory(prev => [...prev, { type: 'bot', text: '❌ Erreur serveur. Vérifie le backend.' }]);
+      alert("❌ Erreur serveur. Vérifie le backend.");
+      setHistory(prev => [...prev, {
+        type: 'bot',
+        text: '❌ Erreur serveur. Vérifie le backend.'
+      }]);
     }
 
     setMessage('');

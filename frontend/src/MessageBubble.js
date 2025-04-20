@@ -10,10 +10,11 @@ function MessageBubble({ type, text, parsed }) {
     content = (
       <div className="output-text" style={{ textAlign: 'left' }}>
         <p><strong>🧍‍♀️ Patient :</strong> {parsed.patient || '-'}</p>
-        <p><strong>🌀 Cycle :</strong> {parsed.cycle || '-'}</p>
+        <p><strong>📊 Stade :</strong> {parsed.stade || '-'}</p>
         <p><strong>🎂 Âge :</strong> {parsed.age || '-'}</p>
         <p><strong>🚻 Sexe :</strong> {parsed.sex || '-'}</p>
         <p><strong>🧠 Diagnostic :</strong> {parsed.diagnosis || '-'}</p>
+        <p><strong>⏱️ Fréquence du cycle :</strong> {parsed.cycle_frequency || '-'}</p>
         <p><strong>⚖️ Poids :</strong> {parsed.weight_kg || '-'} kg</p>
         <p><strong>📏 Taille :</strong> {parsed.height_cm || '-'} cm</p>
         <p><strong>📐 BSA :</strong> {parsed.bsa || '-'} m²</p>

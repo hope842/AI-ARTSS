@@ -10,7 +10,7 @@ function PrescriptionPDF({ data }) {
     const safe = (val) => (val !== null && val !== undefined && val !== '' ? val : '-');
 
     doc.text(`Patient : ${safe(data.patient)}`, 20, 30);
-    doc.text(`Cycle : ${safe(data.cycle)}`, 20, 40);
+    doc.text(`Stade : ${safe(data.stade)}`, 20, 40);
     doc.text(`Diagnostic : ${safe(data.diagnosis)}`, 20, 50);
     doc.text(`Protocole : ${safe(data.protocol)}`, 20, 60);
     doc.text(`Poids : ${safe(data.weight_kg)} kg`, 20, 70);
